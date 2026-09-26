@@ -30,7 +30,7 @@ jobs:
           fi
           echo "sdkmanager: $SDKMANAGER"
           yes | "$SDKMANAGER" --licenses >/dev/null 2>&1 || true
-          "$SDKMANAGER" "platform-tools" "platforms;android-30" "build-tools;30.0.3" "ndk;22.0.6917172"
+          "$SDKMANAGER" "platform-tools" "platforms;android-30" "build-tools;30.0.3" "ndk;23.1.7779620"
 
       - name: Grant execute permission for gradlew
         run: chmod +x ./gradlew
