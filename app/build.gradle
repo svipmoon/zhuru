@@ -15,7 +15,6 @@ android {
         ndk {
             abiFilters 'armeabi-v7a', 'arm64-v8a'
         }
-        signingConfig signingConfigs.debug
     }
     buildTypes {
         release {
@@ -32,10 +31,8 @@ android {
             path file('src/main/jni/Android.mk')
         }
     }
+}
 
-    dependencies {
-        compile fileTree(dir: 'libs', include: ['*.jar'])
-        implementation fileTree(dir: 'libs', include: ['*.jar'])
-        api fileTree(dir: 'libs', include: ['*.jar'])   
- }
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 }
