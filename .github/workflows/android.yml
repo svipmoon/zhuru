@@ -21,6 +21,9 @@ jobs:
       - name: Ensure Android SDK packages (platform-30 / build-tools / NDK)
         run: |
           export ANDROID_HOME="${ANDROID_HOME:-/usr/local/lib/android/sdk}"
+          # runner 自带 sdkmanager 需要 Java17 才能运行（构建本身仍用 JDK11）
+          export JAVA_HOME="${JAVA_HOME_17_X64:-/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17*/x64}"
+          export PATH="$JAVA_HOME/bin:$PATH"
           SDKMANAGER="$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager"
           if [ ! -x "$SDKMANAGER" ]; then
             SDKMANAGER=$(find "$ANDROID_HOME" -path '*cmdline-tools*/bin/sdkmanager' -type f 2>/dev/null | head -1)
