@@ -8,6 +8,3 @@ include $(BUILD_EXECUTABLE)
 
 
 include $(CLEAR_VARS) 
-LOCAL_MODULE := test
-LOCAL_SRC_FILES := inject_so.c
-include $(BUILD_SHARED_LIBRARY)
